@@ -1,0 +1,30 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.tours {
+  width: 100%;
+  padding: 25rem 0 15rem 0;
+  margin-top: -10rem;
+  text-align: center;
+
+  .spaceHeadingSecondary {
+    margin-bottom: 8rem;
+  }
+
+  .discoverBTN {
+    background: color('mediumGreenColor');
+    color: color('whiteColor');
+    margin-top: 8rem;
+  }
+
+  @include respond(tab-portrate-no-touch) {
+    padding: 20rem 0 10rem 0;
+
+    .discoverBTN {
+      margin-top: 2rem;
+    }
+
+    .spaceHeadingSecondary {
+      margin-bottom: 5rem;
+    }
+  }
+}

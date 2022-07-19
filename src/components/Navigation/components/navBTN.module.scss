@@ -1,0 +1,85 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.navCheckbox {
+  display: none;
+}
+
+.navBTN {
+  position: fixed;
+  z-index: 9999;
+  top: 6rem;
+  right: 6rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  text-align: center;
+  background: color('whiteColor');
+  @include boxShadow(1rem, 3rem, 0.2);
+  cursor: pointer;
+
+  &:hover {
+    .navigationIcon::before {
+      top: -1rem;
+    }
+    .navigationIcon::after {
+      top: 1rem;
+    }
+  }
+
+  @include respond(tab-portrate) {
+    top: 3rem;
+    right: 3rem;
+  }
+
+  @include respond(phone) {
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .navigationIcon {
+    position: relative;
+    margin-top: 3.3rem;
+
+    &,
+    &::before,
+    &::after {
+      width: 3rem;
+      height: 2px;
+      background: color('shadeGreyColor');
+      display: inline-block;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+
+    &::after {
+      top: 0.8rem;
+    }
+  }
+
+  .navCheckbox:checked + & .navigationIcon {
+    background: transparent;
+
+    &::before,
+    &::after {
+      top: 0;
+    }
+
+    &:before {
+      transform: rotate(135deg);
+    }
+
+    &:after {
+      transform: rotate(-135deg);
+    }
+  }
+}

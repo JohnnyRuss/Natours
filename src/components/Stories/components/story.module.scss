@@ -1,0 +1,82 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  @include boxShadow(3rem, 6rem, 0.1);
+  background: rgba(color('whiteColor'), 0.6);
+  border-radius: 0.5rem;
+  padding: 6rem;
+  padding-left: 8.5rem;
+  font-size: size('regullarSize');
+  transform: skewX(-12deg);
+  text-align: left;
+
+  @include respond(tab-portrate) {
+    width: 95%;
+    padding: 3rem;
+    padding-left: 5.5rem;
+    transform: skewX(0deg);
+  }
+
+  & > * {
+    transform: skewX(12deg);
+
+    @include respond(tab-portrate) {
+      transform: skewX(0deg);
+    }
+  }
+
+  &:hover .caption {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover .storyImage {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%);
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 8rem;
+
+    @include respond(tab-portrate) {
+      margin-bottom: 5rem;
+    }
+  }
+
+  .storyFigure {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    @include clipPathCircle(50%, 50%, 50%);
+    transform: translateX(-2.5rem) skewX(12deg);
+    overflow: hidden;
+
+    @include respond(tab-portrate) {
+      transform: translateX(-2.5rem) skewX(0deg);
+    }
+  }
+
+  .storyImage {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transform: translateX(-4rem) scale(1.4);
+    transition: transform 0.25s, filter 0.25s;
+    backface-visibility: hidden;
+  }
+
+  .caption {
+    @include CenterAbsPos(-50%, 0);
+    font-size: size('regullarSize');
+    color: color('whiteColor');
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.25s, transform 0.25s;
+    backface-visibility: hidden;
+  }
+}

@@ -1,0 +1,43 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.headingContent {
+  @include CenterAbsPos;
+  text-align: center;
+  backface-visibility: hidden;
+
+  .headingTitleText {
+    color: color('whiteColor');
+    text-transform: uppercase;
+    backface-visibility: hidden;
+  }
+
+  .headingTitleTextMain,
+  .headingTitleTextSub {
+    display: block;
+    text-align: center;
+  }
+
+  .headingTitleTextMain {
+    font-size: size('headingSize');
+    font-weight: weight('regularWeight');
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-out forwards;
+
+    @include respond(phone) {
+      font-size: size('headingSmallSize');
+      letter-spacing: 1rem;
+    }
+  }
+
+  .headingTitleTextSub {
+    font-size: size('bigSize');
+    font-weight: weight('boldWeight');
+    letter-spacing: 1.75rem;
+    animation: moveInRight 1s ease-out forwards;
+
+    @include respond(phone) {
+      font-size: size('regullarSize');
+      letter-spacing: 0.5rem;
+    }
+  }
+}

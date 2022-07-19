@@ -1,0 +1,16 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.footerNav {
+  border-top: 1px solid color('lightGreyColor');
+  padding-top: 2rem;
+  display: inline-block;
+
+  @include respond(tab-landscape) {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footerNavList {
+    list-style: none;
+  }
+}

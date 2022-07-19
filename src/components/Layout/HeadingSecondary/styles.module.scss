@@ -1,0 +1,29 @@
+@use '../../../styles//helpers/helpers' as *;
+
+.headingSecondary {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  font-size: size('headingSecondarySize');
+  font-weight: weight('bolderWeight');
+  text-transform: uppercase;
+  background: linear-gradient(to right, color('lightGreenColor') -100%, color('darkGreenColor'));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    transform: skewY(1deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(color('blackColor'), 0.2);
+  }
+
+  @include respond(tab-landscape) {
+    font-size: size('extraLargeSize');
+  }
+
+  @include respond(phone) {
+    font-size: size('largeSize');
+  }
+}

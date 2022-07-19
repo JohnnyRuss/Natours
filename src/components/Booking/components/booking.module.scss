@@ -1,0 +1,73 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.booking {
+  padding: 15rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    color('lightGreenColor'),
+    color('darkGreenColor')
+  );
+
+  @include respond(tab-portrate) {
+    padding: 10rem 0;
+  }
+
+  .book {
+    max-width: $container-width;
+    height: 50rem;
+    margin: 0 auto;
+    border-radius: 0.5rem;
+    @include BgGradientImage('whiteColor', 'transparent', 0.8, 0, 'nat-10.jpg', 105deg, 50%, 50%);
+    background-size: cover;
+    @include boxShadow(1.5rem, 4rem, 0.25);
+
+    @include respond(tab-landscape) {
+      max-width: 90%;
+      @include BgGradientImage('whiteColor', 'transparent', 0.8, 0, 'nat-10.jpg', 105deg, 60%, 60%);
+      background-size: cover;
+    }
+
+    @include respond(tab-portrate) {
+      @include BgGradientImage(
+        'whiteColor',
+        'whiteColor',
+        0.8,
+        0.8,
+        'nat-10.jpg',
+        105deg,
+        0%,
+        100%
+      );
+      background-size: cover;
+    }
+  }
+
+  .spaceHeadingSecondary {
+    margin-bottom: 2.5rem;
+  }
+
+  .form {
+    width: 50%;
+    padding: 4rem 6rem 6rem;
+
+    @include respond(tab-landscape) {
+      width: 70%;
+    }
+
+    @include respond(tab-portrate) {
+      width: 100%;
+    }
+  }
+
+  .nextStepBTN {
+    background: color('mediumGreenColor');
+    color: color('whiteColor');
+    text-transform: uppercase;
+    margin-top: 3rem;
+
+    @include respond(phone) {
+      margin-top: 0rem;
+      margin-bottom: 1.5rem;
+    }
+  }
+}

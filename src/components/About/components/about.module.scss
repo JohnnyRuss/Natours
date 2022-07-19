@@ -1,0 +1,29 @@
+@use '../../../styles//helpers/helpers' as *;
+
+.about {
+  padding: 30rem 0;
+  max-width: $container-width;
+  margin: 0 auto;
+  margin-top: -25vh;
+  text-align: center;
+
+  @include respond(tab-landscape) {
+    padding: 30rem 0 25rem 0;
+  }
+
+  @include respond(tab-portrate) {
+    padding: 30rem 0 20rem 0;
+  }
+
+  @include respond(phone) {
+    padding: 30rem 2rem 20rem 2rem;
+  }
+
+  .spaceHeadingSecondary {
+    margin-bottom: 8rem;
+
+    @include respond(tab-portrate) {
+      margin-bottom: 4rem;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.navigationContainer {
+  .checkbox:checked ~ .navBackground {
+    transform: scale(100);
+  }
+  
+  .checkbox:checked ~ .navigation {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    width: 100%;
+  }
+}

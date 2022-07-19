@@ -1,0 +1,52 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.radioGroup {
+  display: inline-block;
+  width: 50%;
+
+  @include respond(phone) {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .radioInput {
+    display: none;
+  }
+
+  .radioLabel {
+    font-size: size('regullarSize');
+    cursor: pointer;
+    text-transform: capitalize;
+    position: relative;
+    padding-left: 3.5rem;
+  }
+
+  .radioBTN {
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    border: 5px solid color('mediumGreenColor');
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: -0.4rem;
+
+    &:after {
+      content: '';
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 50%;
+      background: color('mediumGreenColor');
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+  }
+
+  .radioInput:checked ~ .radioLabel .radioBTN:after {
+    opacity: 1;
+  }
+}

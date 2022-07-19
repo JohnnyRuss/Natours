@@ -1,0 +1,27 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.footerNavListItem {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: 1.5rem;
+  }
+
+  .footerNavListItemLink {
+    &:link,
+    &:visited {
+      color: inherit;
+      display: inline-block;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      transition: all 0.2s ease;
+      backface-visibility: hidden;
+    }
+
+    &:hover {
+      color: color('mediumGreenColor');
+      @include boxShadow(1rem, 2rem, 0.4);
+    }
+  }
+}

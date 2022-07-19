@@ -1,0 +1,54 @@
+@use '../../../styles/helpers/helpers' as *;
+
+%BTN {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  transition: all 0.2s;
+  backface-visibility: hidden;
+}
+
+.btn {
+  &:link,
+  &:visited {
+    background: color('whiteColor');
+    color: color('darkGreyColor');
+    padding: 1rem 4.5rem;
+    border-radius: 5rem;
+    @extend %BTN;
+  }
+
+  &:hover {
+    transform: translateY(-0.4rem);
+  }
+
+  &:active {
+    transform: translateY(0rem);
+  }
+}
+
+.secondaryBTN {
+  &:link,
+  &:visited {
+    font-size: size('regullarSize');
+    color: color('lightGreenColor');
+    border-bottom: 1px solid color('lightGreenColor');
+    @extend %BTN;
+  }
+
+  &:active {
+    background: color('lightGreenColor');
+    color: color('whiteColor');
+    box-shadow: 0 1rem 2rem rgba(color('blackColor'), 0.15);
+    transform: translateY(-0.2rem);
+    padding: 0.5rem;
+  }
+
+  &:hover {
+    box-shadow: 0 0.5rem 1rem rgba(color('blackColor'), 0.15);
+    transform: translateY(0);
+    padding: 0.5rem;
+    border-bottom-width: 2px;
+  }
+}

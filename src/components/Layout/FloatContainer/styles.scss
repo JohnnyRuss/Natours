@@ -1,0 +1,75 @@
+@use '../../../styles/helpers/_helpers.scss' as *;
+
+.floatContainer {
+  max-width: $container-width;
+  margin: 0 auto;
+
+  @include respond(tab-landscape) {
+    max-width: 70rem;
+  }
+
+  .floatRow {
+    width: 100%;
+
+    @include clearFix;
+
+    &:not(:last-child) {
+      margin-bottom: $vertical-gutter;
+
+      @include respond(tab-portrate) {
+        margin-bottom: $vertical-gutter-small;
+      }
+    }
+  }
+
+  %floatItem {
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $horizontal-gutter;
+
+      @include respond(tab-landscape) {
+        margin-right: 0;
+      }
+    }
+
+    @include respond(tab-landscape) {
+      width: 100% !important;
+      margin-bottom: $vertical-gutter-small;
+    }
+  }
+
+  .col-1-of-2 {
+    @extend %floatItem;
+    width: calc((#{$container-width} - #{$horizontal-gutter}) / 2);
+  }
+
+  .col-1-of-3 {
+    @extend %floatItem;
+    width: calc((#{$container-width} - #{$horizontal-gutter}* 2) / 3);
+  }
+
+  .col-2-of-3 {
+    @extend %floatItem;
+    width: calc(
+      2 * ((#{$container-width} - #{$horizontal-gutter} * 2) / 3) + #{$horizontal-gutter}
+    );
+  }
+
+  .col-1-of-4 {
+    @extend %floatItem;
+    width: calc((#{$container-width} - #{$horizontal-gutter}* 3) / 4);
+  }
+
+  .col-2-of-4 {
+    @extend %floatItem;
+    width: calc(2 * ((#{$container-width} - #{$horizontal-gutter}* 3) / 4) + #{$horizontal-gutter});
+  }
+
+  .col-3-of-4 {
+    @extend %floatItem;
+    width: calc(
+      3 * ((#{$container-width} - #{$horizontal-gutter}* 3) / 4) + #{$horizontal-gutter} * 2
+    );
+  }
+}

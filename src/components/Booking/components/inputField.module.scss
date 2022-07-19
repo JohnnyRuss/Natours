@@ -1,0 +1,58 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.formGroup {
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  .formInput {
+    font-size: size('regullarSize');
+    padding: 1.5rem 2rem;
+    border-radius: 0.5rem;
+    background: rgba(color('whiteColor'), 0.5);
+    border: none;
+    font-family: inherit;
+    border-bottom: 3px solid transparent;
+    width: 90%;
+    display: block;
+    transition: all 0.2s;
+
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid color('lightGreenColor');
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    }
+
+    &::-webkit-input-placeholder {
+      color: color('greyTintColor');
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid color('lightOrangeColor');
+    }
+
+    @include respond(tab-portrate) {
+      width: 100%;
+    }
+  }
+
+  .formInput:placeholder-shown + .formLabel {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  .formInput::placeholder{
+    text-transform: capitalize;
+  }
+
+  .formLabel {
+    display: block;
+    font-size: size('smallerSize');
+    font-weight: weight('boldWeight');
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    text-transform: capitalize;
+    transition: opacity 0.2s, transform 0.2s;
+  }
+}

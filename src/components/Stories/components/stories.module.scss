@@ -1,0 +1,27 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.stories {
+  text-align: center;
+  padding-bottom: 10rem;
+  position: relative;
+
+  @include respond(tab-portrate) {
+    padding: 0 2rem;
+    padding-bottom: 8rem;
+  }
+
+  .spaceHeadingSecondary {
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+
+    @include respond(tab-portrate) {
+      margin-top: 6rem;
+      margin-bottom: 4rem;
+    }
+  }
+
+  .readAllBtn {
+    position: absolute;
+    transform: translateX(-50%);
+  }
+}

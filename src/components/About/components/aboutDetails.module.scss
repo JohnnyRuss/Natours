@@ -1,0 +1,21 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.aboutInfoDetails {
+  text-align: left;
+  
+  .spaceHeadingTertiary {
+    margin-bottom: 2rem;
+  }
+
+  .paragraph {
+    font-size: size('regullarSize');
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .moreBTN {
+    position: absolute;
+  }
+}

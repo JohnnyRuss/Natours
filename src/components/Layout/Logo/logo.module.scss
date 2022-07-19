@@ -1,0 +1,35 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.logoWhite {
+  position: absolute;
+  top: 6rem;
+  left: 6rem;
+
+  @include respond(tab-portrate) {
+    top: 4rem;
+    left: 4rem;
+  }
+
+  @include respond(phone) {
+    left: 2rem;
+  }
+
+  .logo {
+    height: 3.5rem;
+    object-fit: contain;
+  }
+}
+
+.footerLogo {
+  text-align: center;
+  margin-bottom: 8rem;
+
+  @include respond(tab-landscape) {
+    margin-bottom: 4rem;
+  }
+
+  .logo {
+    width: 15rem;
+    height: auto;
+  }
+}

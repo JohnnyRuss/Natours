@@ -1,0 +1,32 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.featureBoxContainer {
+  .featureBox {
+    background: color('whiteColor');
+    font-size: size('smallSize');
+    padding: 2rem;
+    border-radius: 0.5rem;
+    @include boxShadow(0.5rem, 1.5rem, 0.3);
+    text-align: center;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: translateY(-1rem) scale(1.05);
+    }
+  }
+
+  .featureBoxIcon {
+    font-size: size('headingSize');
+    display: inline-block;
+    @include lienearGradient('lightGreenColor', 'darkGreenColor');
+    @include clipText;
+  }
+
+  .spaceHeadingTertiary {
+    margin-bottom: 2rem;
+
+    @include respond(tab-portrate) {
+      margin-bottom: 1rem;
+    }
+  }
+}

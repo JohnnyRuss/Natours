@@ -1,0 +1,23 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.navBackground {
+  position: fixed;
+  z-index: 9997;
+  top: 6.5rem;
+  right: 6.5rem;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  @include radialGradient('lightGreenColor', 'darkGreenColor');
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+
+  @include respond(tab-portrate) {
+    top: 3.5rem;
+    right: 3.5rem;
+  }
+
+  @include respond(phone) {
+    top: 2.5rem;
+    right: 2.5rem;
+  }
+}

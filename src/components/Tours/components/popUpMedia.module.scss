@@ -1,0 +1,33 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.popupLeft {
+  width: 33.333%;
+  display: table-cell;
+  vertical-align: middle;
+
+  @include respond(tab-landscape) {
+    width: 100%;
+    display: block;
+    height: 25rem;
+  }
+
+  @include respond(tab-landscape) {
+    height: 20rem;
+  }
+
+  @include respond(phone) {
+    height: 15rem;
+  }
+
+  .popupImage {
+    display: block;
+    width: 100%;
+
+    @include respond(tab-landscape) {
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

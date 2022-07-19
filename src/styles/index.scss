@@ -1,0 +1,46 @@
+@use './helpers/helpers' as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem == 12px
+  }
+
+  @include respond(tab-landscape) {
+    font-size: 56.25%; // 1rem == 9px
+  }
+
+  @include respond(tab-portrate) {
+    font-size: 50%; // 1rem == 8px
+  }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: color('darkGreyColor');
+  padding: 3rem;
+
+  @include respond(tab-landscape) {
+    padding: 0;
+  }
+}
+
+@include scrollBar('body');
+
+::selection {
+  background: color('mediumGreenColor');
+  color: color('whiteColor');
+}

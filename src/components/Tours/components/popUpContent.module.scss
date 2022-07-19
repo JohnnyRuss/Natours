@@ -1,0 +1,64 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.popupRight {
+  width: 66.666%;
+  display: table-cell;
+  vertical-align: middle;
+  padding: 3rem 5rem;
+  text-align: left;
+
+  @include respond(tab-landscape) {
+    width: 100%;
+    display: block;
+  }
+
+  @include respond(tab-portrate) {
+    padding: 2rem 3rem;
+  }
+
+  .popupClose {
+    &:link,
+    &:visited {
+      color: color('darkGreyColor');
+      position: absolute;
+      top: 0rem;
+      right: 1.5rem;
+      font-size: size('extraLargeSize');
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      color: color('mediumGreenColor');
+    }
+  }
+
+  .seconderyHead,
+  .tertiaryHead {
+    margin-bottom: 1rem;
+
+    @include respond(phone) {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .popupText {
+    font-size: size('smallSize');
+    column-count: 2;
+    column-gap: 3rem;
+    column-rule: 1px solid color('darkGreyColor');
+    @include hyphens;
+
+    @include respond(phone) {
+      column-count: unset;
+    }
+  }
+
+  .bookBTN {
+    background: color('mediumGreenColor');
+    color: color('whiteColor');
+    margin-top: 4rem;
+    margin-left: calc(50% - 9rem);
+  }
+}

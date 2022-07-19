@@ -1,0 +1,20 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.footerCopyRight {
+  border-top: 1px solid color('lightGreyColor');
+  padding-top: 2rem;
+  font-size: size('smallSize');
+
+  @include respond(tab-landscape) {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footerLink {
+    &:link,
+    &:visited {
+      color: color('mediumGreenColor');
+      text-transform: capitalize;
+    }
+  }
+}

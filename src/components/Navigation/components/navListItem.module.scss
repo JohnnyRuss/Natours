@@ -1,0 +1,33 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.navListItem {
+  margin: 1rem;
+
+  .navListItemLink {
+    &:link,
+    &:visited {
+      display: inline-block;
+      font-size: size('extraLargeSize');
+      font-weight: weight('thinWeight');
+      padding: 1rem 2rem;
+      color: color('whiteColor');
+      text-transform: uppercase;
+      text-decoration: none;
+      @include lienearGradient('transparent', 'whiteColor', 120deg, 0, 1, 50%, 50%);
+      transition: all 0.5s;
+      background-size: 250%;
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: color('mediumGreenColor');
+      transform: translateX(1rem);
+    }
+  }
+
+  .navListItemNum {
+    display: inline-block;
+    margin-right: 1.5rem;
+  }
+}

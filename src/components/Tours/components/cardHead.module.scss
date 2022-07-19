@@ -1,0 +1,62 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.cardHeadImage {
+  width: 100%;
+  aspect-ratio: 3/2;
+  background-blend-mode: screen;
+  @include clipPathPolygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+  @include respond(tab-portrate) {
+    aspect-ratio: 2/1;
+  }
+
+  &-1 {
+    @include BgGradientImage('lightOrangeColor', 'darkOrangeColor', 1, 1, 'nat-5.jpg');
+    background-size: cover;
+  }
+
+  &-2 {
+    @include BgGradientImage('lightGreenColor', 'darkGreenColor', 1, 1, 'nat-6.jpg');
+    background-size: cover;
+  }
+
+  &-3 {
+    @include BgGradientImage('lightBlueColor', 'darkBlueColor', 1, 1, 'nat-7.jpg');
+    background-size: cover;
+  }
+}
+
+.tourCardHeading {
+  font-size: size('extraLargerSize');
+  font-weight: weight('thinWeight');
+  text-transform: uppercase;
+  color: color('whiteColor');
+  position: absolute;
+  top: 18rem;
+  right: 2rem;
+  width: 50%;
+  text-align: right;
+
+  .headingBreak {
+    padding: 1rem 1.5rem;
+    box-decoration-break: clone;
+
+    &-1 {
+      @include lienearGradient('lightOrangeColor', 'darkOrangeColor', 160deg, 1, 1);
+    }
+
+    &-2 {
+      @include lienearGradient('lightGreenColor', 'darkGreenColor', 160deg, 1, 1);
+    }
+
+    &-3 {
+      @include lienearGradient('lightBlueColor', 'darkBlueColor', 160deg, 1, 1);
+    }
+  }
+
+  @include respond(tab-portrate-no-touch) {
+    top: 17rem;
+    right: 2rem;
+    width: 30%;
+  }
+}

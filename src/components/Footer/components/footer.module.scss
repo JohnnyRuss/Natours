@@ -1,0 +1,15 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.footer {
+  background: color('shadeGreyColor');
+  color: color('lightGreyColor');
+  padding: 10rem 0;
+
+  @include respond(tab-landscape) {
+    padding: 8rem 0 4rem 0;
+  }
+
+  @include respond(phone) {
+    padding: 8rem 2rem 4rem 2rem;
+  }
+}

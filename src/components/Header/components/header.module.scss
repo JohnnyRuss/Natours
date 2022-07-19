@@ -1,0 +1,36 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.header {
+  height: 95vh;
+  @include BgGradientImage('lightGreenColor', 'darkGreenColor', 0.8, 0.8, 'hero-small.jpg');
+  background-size: cover;
+  background-position: top;
+  @include clipPathPolygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    @include BgGradientImage('lightGreenColor', 'darkGreenColor', 0.8, 0.8, 'hero.jpg');
+  }
+
+  @include respond(tab-portrate) {
+    @include clipPathPolygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  .discoverBTN:link,
+  .discoverBTN:visited {
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    margin-top: 2rem;
+  }
+
+  .discoverBTN:hover {
+    @include boxShadow(1rem, 2rem, 0.2, 0.5rem);
+  }
+
+  .discoverBTN:active {
+    @include boxShadow(0.5rem, 1rem, 0.2, 0.5rem);
+  }
+
+  .discoverBTN-Animated {
+    animation: moveTop 0.5s ease-out 0.5s backwards;
+  }
+}

@@ -1,0 +1,11 @@
+@use '../../../styles/helpers/helpers' as *;
+
+.headingTertiary {
+  font-size: size('regullarSize');
+  font-weight: weight('bolderWeight');
+  text-transform: uppercase;
+
+  @include respond(phone) {
+    font-size: size('smallSize');
+  }
+}
