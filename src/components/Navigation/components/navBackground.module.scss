@@ -1,4 +1,4 @@
-@use '../../../styles/helpers/helpers' as *;
+@use "../../../styles/helpers/helpers" as *;
 
 .navBackground {
   position: fixed;
@@ -8,7 +8,7 @@
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
-  @include radialGradient('lightGreenColor', 'darkGreenColor');
+  @include radialGradient("lightGreenColor", "darkGreenColor");
   transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
 
   @include respond(tab-portrate) {

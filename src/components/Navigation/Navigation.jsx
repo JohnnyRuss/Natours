@@ -1,9 +1,9 @@
-import { useRef } from 'react';
+import { useRef } from "react";
 
-import styles from './components/navigation.module.scss';
-import NavBTN from './components/NavBTN';
-import NavBackground from './components/NavBackground';
-import NavList from './components/NavList';
+import styles from "./components/navigation.module.scss";
+import NavBTN from "./components/NavBTN";
+import NavBackground from "./components/NavBackground";
+import NavList from "./components/NavList";
 
 function Navigation() {
   const checkBoxRef = useRef();
